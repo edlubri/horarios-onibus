@@ -1,0 +1,79 @@
+﻿<!doctype html>
+
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="theme-color" content="#0f172a">
+
+  <title>Horários de Ã”nibus</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="container detail">
+
+<!-- VOLTAR -->
+<a class="back" href="index.html">
+  Todas as linhas
+</a>
+
+<!-- CABEÃ‡ALHO DA LINHA -->
+<header class="line-header">
+
+  <div id="numero" class="big-number"></div>
+
+  <div>
+    <h1 id="titulo">Carregando...</h1>
+    <p id="dias"></p>
+  </div>
+
+</header>
+
+<!-- TRAJETO -->
+<section class="panel">
+
+  <h2>Trajeto</h2>
+
+  <p id="trajeto" class="route"></p>
+
+</section>
+
+<!-- HORÃRIOS -->
+<section class="panel">
+
+  <h2>Horários</h2>
+
+  <div id="tabela" class="table-wrap"></div>
+
+  <!-- LEGENDA -->
+  <div class="horario-legenda">
+  <strong>Legenda:</strong>
+  hor&#225;rio indicado = hor&#225;rio oficial de refer&#234;ncia naquele ponto.
+  <strong>/</strong> = ponto intermedi&#225;rio sem hor&#225;rio oficial definido.
+</div>
+
+</section>
+
+<!-- MENSAGEM DE ERRO -->
+<p id="erro" class="error" hidden></p>
+
+  </main>
+
+  <script src="linha.js?v=5"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+

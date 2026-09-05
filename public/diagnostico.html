@@ -1,0 +1,69 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Diagnóstico Linha 101</title>
+</head>
+<body>
+<h1>Diagnóstico da Linha 101</h1>
+<div id="status">Iniciando...</div>
+<pre id="dados"></pre>
+<div id="tabela"></div>
+
+<script>
+const status = document.getElementById("status");
+const dados = document.getElementById("dados");
+const tabela = document.getElementById("tabela");
+
+fetch("./data/linhas.json")
+  .then(r => {
+    status.textContent = "JSON HTTP: " + r.status;
+    return r.json();
+  })
+  .then(data => {
+    const l = data.linhas.find(x => x.id === "101");
+
+    if (!l) {
+      throw new Error("Linha 101 não encontrada");
+    }
+
+    status.textContent =
+      "OK — linha " + l.codigo +
+      " — colunas: " + l.colunas.length +
+      " — horários: " + l.horarios.length;
+
+    dados.textContent =
+      "COLUNAS:\n" +
+      JSON.stringify(l.colunas, null, 2) +
+      "\n\nPRIMEIROS HORÁRIOS:\n" +
+      JSON.stringify(l.horarios.slice(0, 5), null, 2);
+
+    let html = "<table border='1' cellpadding='8'><thead><tr>";
+
+    for (const coluna of l.colunas) {
+      html += "<th>" + coluna + "</th>";
+    }
+
+    html += "</tr></thead><tbody>";
+
+    for (const row of l.horarios) {
+      html += "<tr>";
+
+      for (const valor of row) {
+        html += "<td>" + (valor ?? "") + "</td>";
+      }
+
+      html += "</tr>";
+    }
+
+    html += "</tbody></table>";
+
+    tabela.innerHTML = html;
+  })
+  .catch(e => {
+    status.textContent = "ERRO: " + e.message;
+    console.error(e);
+  });
+</script>
+</body>
+</html>

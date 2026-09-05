@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f172a">
+  <title>Hor&#225;rios de &#212;nibus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <p class="eyebrow">TRANSPORTE COLETIVO</p>
+      <h1>Hor&#225;rios de &#244;nibus</h1>
+      <p>Selecione uma linha para consultar hor&#225;rios e trajeto.</p>
+    </header>
+
+    <section class="search-box" aria-label="Buscar linha">
+      <label for="busca">Buscar linha ou destino</label>
+      <input id="busca" type="search" placeholder="Ex.: 101, Centro, UTFPR..." autocomplete="off">
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Linhas</h2>
+        <span id="contador"></span>
+      </div>
+      <div id="linhas" class="line-list"></div>
+    </section>
+
+    <p id="erro" class="error" hidden></p>
+  </main>
+
+  <script src="app.js?v=2"></script>
+</body>
+</html>

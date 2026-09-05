@@ -1,0 +1,398 @@
+﻿/* =========================================================
+   RESET E BASE
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.container {
+    width: min(1100px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 32px 0 48px;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+header {
+    margin-bottom: 24px;
+}
+
+h1 {
+    margin: 0 0 8px;
+    font-size: 2rem;
+}
+
+h2 {
+    margin: 0 0 16px;
+    font-size: 1.25rem;
+}
+
+p {
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   LISTA DE LINHAS
+   ========================================================= */
+
+.linha-lista {
+    display: grid;
+    gap: 12px;
+}
+
+.linha-card {
+    display: block;
+    padding: 18px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.linha-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, .08);
+}
+
+.linha-card strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 1.1rem;
+}
+
+.linha-card span {
+    color: #475569;
+}
+
+
+/* =========================================================
+   PAINÉIS
+   ========================================================= */
+
+.panel {
+    margin-bottom: 24px;
+    padding: 20px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.route {
+    margin: 0;
+    color: #334155;
+}
+
+
+/* =========================================================
+   PÁGINA DA LINHA
+   ========================================================= */
+
+.back {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.line-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.big-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 72px;
+    height: 72px;
+    padding: 8px 12px;
+    background: #0f172a;
+    color: white;
+    border-radius: 14px;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+#dias {
+    margin: 0;
+    color: #64748b;
+}
+
+
+/* =========================================================
+   TABELAS
+   ========================================================= */
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #cbd5e1;
+    border-radius: 0 0 10px 10px;
+}
+
+table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    background: white;
+}
+
+th,
+td {
+    padding: 11px 12px;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: center;
+    white-space: nowrap;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #e2e8f0;
+    color: #0f172a;
+    font-size: .85rem;
+    font-weight: 800;
+}
+
+tbody tr:nth-child(even) td {
+    background: #f8fafc;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+th:last-child,
+td:last-child {
+    border-right: 0;
+}
+
+
+/* =========================================================
+   LEGENDA
+   ========================================================= */
+
+.horario-legenda {
+    margin-top: 14px;
+    padding: 12px 14px;
+    background: #f8fafc;
+    border-left: 4px solid #64748b;
+    color: #475569;
+    font-size: .9rem;
+    line-height: 1.5;
+}
+
+.sem-horario {
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   SEPARAÇÃO DOS PERÍODOS
+   ========================================================= */
+
+.horario-periodo {
+    margin-bottom: 28px;
+}
+
+.periodo-titulo {
+    padding: 13px 16px;
+    background: #0f172a;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    font-size: .95rem;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: .02em;
+}
+
+
+/* =========================================================
+   SÁBADO — DESTAQUE ESPECIAL
+   ========================================================= */
+
+.horario-periodo:nth-child(2) .periodo-titulo {
+    background: #475569;
+    font-size: 1.25rem;
+    font-weight: 900;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.horario-periodo:nth-child(2) .table-wrap {
+    border-color: #94a3b8;
+}
+
+.horario-periodo:nth-child(2) tbody tr:nth-child(even) td {
+    background: #f1f5f9;
+}
+
+
+/* =========================================================
+   ERRO
+   ========================================================= */
+
+.error {
+    margin-top: 20px;
+    padding: 14px;
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    color: #991b1b;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: min(100% - 20px, 1100px);
+        padding-top: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .line-header {
+        align-items: flex-start;
+    }
+
+    .big-number {
+        min-width: 60px;
+        height: 60px;
+        font-size: 1.25rem;
+    }
+
+    .panel {
+        padding: 14px;
+    }
+
+    .periodo-titulo {
+        font-size: .9rem;
+        padding: 12px;
+    }
+
+    .horario-periodo:nth-child(2) .periodo-titulo {
+        font-size: 1.15rem;
+    }
+
+    th,
+    td {
+        padding: 9px 10px;
+        font-size: .85rem;
+    }
+}
+/* =========================================================
+   CORREÇÃO VISUAL — NÃO ALTERAR AS TABELAS
+   ========================================================= */
+
+table th {
+    font-weight: 500;
+}
+
+.periodo-titulo {
+    font-size: .95rem;
+    font-weight: 500;
+}
+
+.periodo-titulo strong {
+    font-size: 1.15rem;
+    font-weight: 900;
+}
+/* =========================================================
+   QUEBRA DE LINHA NOS CABEÇALHOS DAS TABELAS
+   ========================================================= */
+
+.table-wrap table {
+    width: 100%;
+    min-width: 0;
+    table-layout: fixed;
+}
+
+.table-wrap th {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    line-height: 1.2;
+}
+
+
+/* Destaque discreto do número da linha */
+.line-number {
+    font-weight: 800;
+}
+/* =========================================================
+   LISTA DE LINHAS — AJUSTE VISUAL
+   ========================================================= */
+
+.line-card {
+    margin-bottom: 30px;
+}
+
+.line-number {
+    font-weight: 800;
+    margin-right: 8px;
+}
+
+/* Espaçamento entre linhas na página inicial */
+.line-list .line-card {
+    margin-bottom: 30px !important;
+}
+
+/* ESPAÇAMENTO REAL ENTRE OS CARTÕES DA PÁGINA INICIAL */
+.linha-lista {
+    gap: 30px !important;
+}
+
+.line-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px !important;
+}
+
+.line-list .line-card {
+    margin-bottom: 0 !important;
+}
