@@ -396,3 +396,22 @@ table th {
 .line-list .line-card {
     margin-bottom: 0 !important;
 }
+
+/* =========================================================
+   CORREÇÃO — NÃO QUEBRAR PALAVRAS DOS CABEÇALHOS
+   ========================================================= */
+
+.table-wrap table {
+    width: 100%;
+    min-width: 650px;
+    table-layout: auto;
+}
+
+.table-wrap th {
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+    line-height: 1.2;
+}
+
